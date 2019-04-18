@@ -2,7 +2,7 @@
 ## Adrien Talbot & Nacho Martínez Jacobson
 ### Data Analytics Bootcamp --- 25/02/2019 - 26/04/2019
 
-## Overview
+## Overview
 -------------
 
 ## Data preparation
@@ -11,7 +11,7 @@ We will be working with the [Chicago Crime rates](https://data.cityofchicago.org
 
 - For more information on the dataset, we have created a table containing detailed information about it.
 
-## Data ingestion & Database
+## Data ingestion & Database
 -------------------------------
 - The downloaded database comes formatted as a .csv. Below we will provide code to load the database using python:
 
