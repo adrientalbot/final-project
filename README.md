@@ -1,128 +1,55 @@
+# Chicago Crime Prevention
+## Adrien Talbot & Nacho Martínez Jacobson
+### Data Analytics Bootcamp --- 25/02/2019 - 26/04/2019
 
-![Ironhack logo](https://i.imgur.com/1QgrNNw.png)
+## Overview
+-------------
 
-# Welcome to Final Project!
+## Data preparation
+---------------------
+We will be working with the [Chicago Crime rates](https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2), which has reported incidents of crime from 2001 to the present date in the area of Chicago, US.
 
-## Project Goals
-* Do an e2e analysis by your own:
-  * Give some insights about a topic of your choice giving some arguments by:
-    * Being able to transmit the analysis in an ordered way.
-    * Using the statistical/ML techniques learnt during the last weeks.
-    * Plotting the graphs in a useful way for the reader / listener.
-  * Present your analysis in two ways and for two different audiencies:
-    * Technical audience: you will present a paper.
-    * Jury: you will do a presentation.
-    
-    
-## Considerations
-* You can be in team (3 max) or on your own.
-* You can include ML or statistics or not. But to do a proper analysis you will need something...
-* You can use the data from your last project.
-* You can focus on:
-  * Learning more on something that you need to grow.
-  * Learning more on something that is where you feel comfortable.
+- For more information on the dataset, we have created a table containing detailed information about it.
 
-## Deliverables
-* A notebook with your analysis in a paper way. Jupyter or Zeppelin are allowed.
-* A 10' presentation in the auditorium.
-* A 10' presentation for the jury.
-* Repository with your workflow + documentation + code. Even if you are working alone, you need to keep good practices!
-* Database.
+## Data ingestion & Database
+-------------------------------
+- The downloaded database comes formatted as a .csv. Below we will provide code to load the database using python:
 
-## General schedule
-*Wednesday*
-* Which will be your team/individual.
-* Your topic.
+```python
+# make sure to install pandas before running:
+# pip3 install pandas
 
+import pandas as pd
+chicago_cmr = pd.read_csv('Crimes_-_2001_to_present.csv')
+```
 
-*Thursday*
-* Repository link.
-* README overview (you have a template)
-* Dataset chosen
-* Teachers validation --NO CODE UNTIL HERE--
+- Use of an API is also possible, we provide the code below and [API Doc link](https://dev.socrata.com/foundry/data.cityofchicago.org/ijzp-q8t2) for those who prefer working with it instead of the .csv file:
 
-*Monday morning*
-* Database schema validation.
+```python
+# make sure to install these packages before running:
+# pip3 install pandas
+# pip3 install sodapy
 
-*Monday*
-* Data in the database.
+import pandas as pd
+from sodapy import Socrata
 
-*Tuesday evening*
-* Analysis validation.
+# Unauthenticated client only works with public data sets. Note 'None'
+# in place of application token, and no username or password:
+client = Socrata("data.cityofchicago.org", None)
 
-*Wednesday*
-* First rehearshall.
+# Example authenticated client (needed for non-public datasets):
+# client = Socrata(data.cityofchicago.org,
+#                  MyAppToken,
+#                  userame="user@example.com",
+#                  password="AFakePassword")
 
-*Thursday morning*
-* General rehearshall.
+# First 2000 results, returned as JSON from API / converted to Python list of
+# dictionaries by sodapy.
+results = client.get("ijzp-q8t2", limit=2000)
 
-*Thursday evening*
-* Presentation!
+# Convert to pandas DataFrame
+results_df = pd.DataFrame.from_records(results)
 
-## General advices
-* Organize yourself (don't get lost!). Respect the deadlines.
-* Ask for help vs Google is your friend.
-* Define a simple approach first. You never know how the data can betray you ;)
-* Documentate yourself. Know about the problem. Look for some analysis that someone did before you.
-* Before doing a graph, think what you want to represent.
-* Don't force yourself to use tecniques if it's not useful for your objective.
-
-# README Template
-
-[Your Final Project Title]
-[Your Name]
-
-[Your Cohort Campus & Time]
-
-### Overview
-Include the following points in your overview:
-
-* What data/business/research/personal question you would like to answer?
-Make sure the question description is human-friendly because you will have non-tech audience to see your final project presentation.
-* Did you understand the context for the question and the scientific or business application?
-* What is the hypothesis you would like to test in order to answer your question?
-Frame your hypothesis with statistical/data languages (i.e. define Null and Alternative Hypothesis). You can use formulas if you want but that is not required.
-* Did you consider whether the question could be answered with the available data?
-* How will you test your hypothesis?
-* How will you test your success?
-
-
-
-
-### Data Preparation
-Overview:
-* What is your dataset about?
-* Where/how did you obtain your dataset?
-It can be either a public dataset or collected with API/web scraping.
-Provide a link if possible.
-* General description of the dataset such as the size, complexity, data types, etc.
-
-### Data Ingestion & Database
-* If you downloaded a dataset (either public or private), describe where you downloaded it and include the command to load the dataset.
-* If you obtain the data via API/web scraping, provide the scripts.
-* Provide a schema of your tables.
-
-### Data Wrangling and Cleaning
-Your full process of data wrangling and cleaning.
-* Document your workflow and thinking process.
-
-### Data Analysis
-* Overview the general steps you will go through to analyze your data in order to test your hypothesis.
-* Document each step of your data exploration and analysis.
-* Print charts to demonstrate the effect of your work. Charts make your presentation look good too.
-* If you use ML in your final project, also describe your feature selection process.
-
-### Model Training and Evaluation
-* Train your ML model, produce results, and evaluate.
-* This is an iterative process. Try your best to improve your model performance by:
-  * Try different models and select one that is the simplest yet produce the best result.
-  * Try advanced techniques and see if they improve the result.
-
-### Conclusion
-* Summarize your data analysis result.
-* State your conclusion of your hypothesis testing.
-* Interpret your findings in terms of the human-understandable question you try to answer.
-
-### What are the next steps?
-
-
+```
+## Data Wrangling and Cleaning
+--------------------------------
