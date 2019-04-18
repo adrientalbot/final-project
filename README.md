@@ -4,7 +4,7 @@
 
 ## Overview
 -------------
-Our beleif prior to starting this analysis is that Chicago is high crime rate city comparing to the rest of the US, so we're conducting this analysis to check if we're correct.
+Our belief prior to starting this analysis is that Chicago is high crime rate city compared to the rest of the US, so we're conducting this analysis to check if our assumption is accurate.
 
 The main questions we will be trying to answer are the following:
 
@@ -21,6 +21,8 @@ To complete our analysis we will implement a Machine Learning algorithm (Logisti
 ## Data preparation
 ---------------------
 We will be working with the [Chicago Crime rates](https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2), which has reported incidents of crime from 2001 to the present date in the area of Chicago, US.
+
+[IUCR](https://data.cityofchicago.org/Public-Safety/Chicago-Police-Department-Illinois-Uniform-Crime-R/c7ck-438e) database, which contains four digit codes that law enforcement agencies use to classify criminal incidents when taking individual reports. 
 
 - For more information on the dataset, we have created a table containing detailed information about it.
 
