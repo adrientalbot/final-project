@@ -1,9 +1,22 @@
 # Chicago Crime Prevention
 ## Adrien Talbot & Nacho Martínez Jacobson
-### Data Analytics Bootcamp --- 25/02/2019 - 26/04/2019
+### Data Analytics Bootcamp --- 25/02/2019 - 26/04/2019
 
 ## Overview
 -------------
+Our beleif prior to starting this analysis is that Chicago is high crime rate city comparing to the rest of the US, so we're conducting this analysis to check if we're correct.
+
+The main questions we will be trying to answer are the following:
+
+- Evolution of the arrest rate in Chicago compared to the rest of the US.
+- Severity of crimes commited in Chicago vs the rest of the US.
+- How has the arrest rate per neighbourhood evolved over the years?
+- Are crimes more severe now than in the past?
+- Has the proportion of crimes in school changed from 2001 to 2018?
+- Has the nature, severity and proportion of crimes commited in schools changed over the years?
+
+To complete our analysis we will implement a Machine Learning algorithm (Logistic Regression) that depending on specific features will determine if a crime will end up in arrest or not.
+
 
 ## Data preparation
 ---------------------
