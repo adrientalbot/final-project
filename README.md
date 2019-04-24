@@ -4,25 +4,27 @@
 
 ## Overview
 -------------
-Our belief prior to starting this analysis is that Chicago is high crime rate city compared to the rest of the US, so we're conducting this analysis to check if our assumption is accurate.
+By reading an article, we found out that the number of homicides in Chicago tremendously increased between 2015 and 2016 with an approximate growth of 58% in that period. 
+Therefore, we got interested in the evolution of the total crimes in Chicago over time in order to see if the number of total crimes experienced a similar increase post 2015 as did the number of homicides.  
 
-The main questions we will be trying to answer are the following:
+Our hypothesis prior to starting the analysis is that the number of crimes increased post 2015. But we  want to look at the seasonality trends from 2001 until nowadays as well. We are also interested in the evolution of the monthly arrest rate for the same period and the repartition of total crimes per district. 
+We will check if that assumption is true in the following analysis. 
 
-- Evolution of the arrest rate in Chicago compared to the rest of the US.
-- Severity of crimes commited in Chicago vs the rest of the US.
-- How has the arrest rate per neighbourhood evolved over the years?
-- Are crimes more severe now than in the past?
-- Has the proportion of crimes in school changed from 2001 to 2018?
-- Has the nature, severity and proportion of crimes commited in schools changed over the years?
+To complete our analysis we will implement a machine learning algorithm (using Random Forest Classifier) that will predict whether a specific crime (using features such as type of crime, location and arrest rate/district) leads to an arrest or not. We believe that it is important as this algorithm will allow the Chicago Police deparment to better allocate its resources (number of agents per district or neighborhood).
 
-To complete our analysis we will implement a Machine Learning algorithm (Logistic Regression) that depending on specific features will determine if a crime will end up in arrest or not.
+Finally, we will predict the number of crimes per month in the next five years by doing an SARIMA time series analysis (Samira.ipynb file).
+
+## Repository structure
+--------------------------------
+
+- In the EDA folder, there is the data cleaning file (Data_Wrangling.ipynb) which contains all the cleaning we performed prior to starting the analysis. Additional cleaning is also present in the onehotencoding_analysis.ipynb file (from the analysis folder) to create the one hot encoded table to perform the machine learning algorithm. 
+
+- In the main analysis folder, you will find the SAMRIMA times series analysis (TBC by Nacho) along with the Random Forest Classifier ML algorithm which gives predictions on arrests (classification_ml_prediction.ipynb) as well as the statistics file (stats_analysis.ipynb).
 
 
 ## Data preparation
 ---------------------
 We will be working with the [Chicago Crime rates](https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2), which has reported incidents of crime from 2001 to the present date in the area of Chicago, US.
-
-[IUCR](https://data.cityofchicago.org/Public-Safety/Chicago-Police-Department-Illinois-Uniform-Crime-R/c7ck-438e) database, which contains four digit codes that law enforcement agencies use to classify criminal incidents when taking individual reports. 
 
 - For more information on the dataset, we have created a table containing detailed information about it.
 
