@@ -19,7 +19,7 @@ Finally, we will predict the number of crimes per month in the next five years b
 
 - In the EDA folder, there is the data cleaning file (Data_Wrangling.ipynb) which contains all the cleaning we performed prior to starting the analysis. Additional cleaning is also present in the onehotencoding_analysis.ipynb file (from the analysis folder) to create the one hot encoded table to perform the machine learning algorithm. 
 
-- In the main analysis folder, you will find the SAMRIMA times series analysis (TBC by Nacho) along with the Random Forest Classifier ML algorithm which gives predictions on arrests (classification_ml_prediction.ipynb) as well as the statistics file (stats_analysis.ipynb).
+- In the main analysis folder, you will find the SARIMA times series analysis along with the Random Forest Classifier ML algorithm which gives predictions on arrests (classification_ml_prediction.ipynb) as well as the statistics file (stats_analysis.ipynb).
 
 
 ## Data preparation
